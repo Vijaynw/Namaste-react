@@ -1,0 +1,89 @@
+{
+    "info": {
+        "id": "252547",
+        "name": "Theobroma",
+        "cloudinaryImageId": "b033728dcb0101ceb19bff0e1e1f6474",
+        "locality": "Aundh",
+        "areaName": "Aundh",
+        "costForTwo": "₹500 for two",
+        "cuisines": [
+            "Bakery",
+            "Desserts"
+        ],
+        "avgRating": 4.5,
+        "feeDetails": {
+            "restaurantId": "252547",
+            "fees": [
+                {
+                    "name": "BASE_DISTANCE",
+                    "fee": 4400
+                },
+                {
+                    "name": "BASE_TIME"
+                },
+                {
+                    "name": "ANCILLARY_SURGE_FEE"
+                }
+            ],
+            "totalFee": 4400
+        },
+        "parentId": "1040",
+        "avgRatingString": "4.5",
+        "totalRatingsString": "5K+",
+        "sla": {
+            "deliveryTime": 13,
+            "lastMileTravel": 0.6,
+            "serviceability": "SERVICEABLE",
+            "slaString": "13 mins",
+            "lastMileTravelString": "0.6 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-12-04 00:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "newg.png",
+                    "description": "Gourmet"
+                }
+            ]
+        },
+        "isOpen": true,
+        "aggregatedDiscountInfoV2": {},
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "Gourmet",
+                                "imageId": "newg.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/theobroma-aundh-pune-252547",
+        "type": "WEBLINK"
+    }
+}
