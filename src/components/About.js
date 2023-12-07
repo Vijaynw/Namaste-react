@@ -5,7 +5,7 @@ import UserContext from "./UserContext"
 const About =()=>{
     return(
         <div className="about">
-        <h1>Hello About</h1>
+        <h1>Hello About</h1>z
         <User name="vijay from function component"/>
         <UserClass name="vijay"/>
         <UserContext.Consumer>

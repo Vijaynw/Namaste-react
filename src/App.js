@@ -57,8 +57,8 @@ const appRouter = createBrowserRouter([
   element: <AppLayout/>,
   children:[
     {
-path: "/",
-element: <Main/>
+    path: "/",
+    element: <Main/>
     },
     {
       path:"/body",

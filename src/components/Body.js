@@ -6,22 +6,26 @@ import { Link } from "react-router-dom";
 import useOn from "../utils/useOn";
 import UserContext from "./UserContext";
 import { useParams } from "react-router-dom";
-
+import { useLocation } from 'react-router-dom';
+import Header from "./Header";
 const Body = ({latlang}) => {
 
   const [listofRes,setlistofres] = useState([]);
   const [listofRes1,setlistofres1] = useState([]);
   const [search,setSearch]=useState("")
-  const {resLat,resLang} = useParams()
-
-  
-  console.log(resLat,resLang)
+  const {userId} = useParams()
+  const location = useLocation();
+  const lat = new URLSearchParams(location.search).get('lat');
+  const lon = new URLSearchParams(location.search).get('lon');
+  console.log(lat,lon)
+  console.log(location)
   const RestroPromoted = withPromothedData(Restrocard)
   //conditional
  
 
   const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat="+resLat+"&lng="+resLang+"&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lon+"&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
     // setlistofres =json
     setlistofres(json.data?.cards[2].card.card.gridElements.infoWithStyle.restaurants)
@@ -35,7 +39,7 @@ const Body = ({latlang}) => {
     fetchData()
     // console.log("object")
   },[]);
-console.log(listofRes)
+
   const onlineStatus = useOn()
 
   if(onlineStatus === true)
@@ -43,6 +47,8 @@ console.log(listofRes)
     return listofRes.length === 0 ? (
       <Shimmer />
     ) : (
+      <>
+      {/* <Header lat={lat} lon={lon}/> */}
       <div className="body">
         <div className="filter">
           <div className="flex item-center  border justify-center ">
@@ -127,6 +133,7 @@ console.log(listofRes)
           </div>
         </div>
       </div>
+      </>
     );
   };
   export default Body;

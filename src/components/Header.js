@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import useOn from "../utils/useOn";
 import {useSelector} from "react-redux"
 import UserContext from "./UserContext";
-const Header = () => {
+const Header = ({lat,lon}) => {
+  console.log(lat,lon)
 const [login,setLogin]=useState("login")
 const cartItem = useSelector((store)=>store.cart.items);
 
 
   useEffect(()=>{
-    // console.log("useEffect")
+
     
   },[])
 
@@ -28,7 +29,7 @@ const cartItem = useSelector((store)=>store.cart.items);
 
           <ul className="flex p-4 m-4 justify-center items-center">
           <li className="px-4 bg-gray-100 py-2 m-4 rounded-[50] hover:bg-gray-100">Online Status : {onlineStatus ? "Online 🚀 " : "Offline🥴"}</li>
-          <Link className="px-4 bg-gray-100 py-2 m-4 rounded-[50]" to="/body/" > <li>Home</li></Link>  
+          <Link className="px-4 bg-gray-100 py-2 m-4 rounded-[50]" to={"/"} > <li>Home</li></Link>  
           <Link className=" px-4 bg-gray-100 py-2 m-4 rounded-[50]" to="/about" ><li>About Us</li></Link> 
           <Link className=" px-4 bg-gray-100 py-2 m-4 rounded-[50]" to={"/contact"}> <li>Contact us</li> </Link>
           <Link className=" px-4 bg-gray-100 py-2 m-4 rounded-[50]" to={"/cart"}> <li>Cart {cartItem.length} </li> </Link>
