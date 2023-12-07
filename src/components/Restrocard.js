@@ -9,7 +9,7 @@ const data = useContext(UserContext)
 const {resData} = props;
 // console.log(resData)
   return (
-    <div data-testid="res-cards" className="ml-20 p-4 w-[350] h=[250] border" 
+    <div data-testid="res-cards" className="ml-10 p-4 w-[350] h=[250] border" 
     /*style={styleCard}*/ >
       <img
         className="w-[250] h-[250]"
@@ -34,7 +34,7 @@ export const withPromothedData = (Restrocard)=>{
   return(props)=>{
     return (
       <div>
-        <label className="ml-20">Promoted</label>
+        <label className="ml-10">Promoted</label>
         <Restrocard {...props}/>
       </div>
     )

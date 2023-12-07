@@ -1,5 +1,5 @@
 export const CDN_URl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-export const LOGO_URl="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+export const LOGO_URl="https://logowik.com/content/uploads/images/restaurant9491.logowik.com.webp"
 export const USER_URl="https://api.github.com/users/akshaymarch7    "
 export const MENU_URl="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5555837&lng=73.8052578&restaurantId="
 export const RESTU_URl="https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5555837&lng=73.8052578&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"

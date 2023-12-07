@@ -110,21 +110,22 @@ const Body = ({latlang}) => {
             Non-Veg Restaurants
           </button>
 
-          <input
+          {/* <input
             className="w-[350] m-[20] p-[10] border border-solid color rounded-[50]"
             type="text"
             placeholder="Hello, world"
             value={loggedInuser}
             onChange={(e) => {
+              
               setName(e.target.value);
             }}
-            />
+            /> */}
               </div>
 
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap justify-center">
 
             {listofRes.map((res) => (
-            <Link className="flex flex-wrap break-words" key={res.info.id} to={"/resturant/"+ res.info.id +"/" + res.info.name} >
+            <Link className=" break-words" key={res.info.id} to={"/resturant/"+ res.info.id +"/" + res.info.name} >
             {res.info.isOpen ?( <RestroPromoted  resData={res}/>):(
             <Restrocard resData={res}/>
            ) }
