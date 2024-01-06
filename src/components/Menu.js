@@ -7,7 +7,7 @@ const Menu = (props)=>{
     const [listofRes,setlistofres] = useState([]);
     const [listofRes1,setlistofres1] = useState([]);
     // const [listofRes1,setlistofres1] = useState([]);
-    const {resId,resName} = useParams()
+    const {resId,resName,resArea,avgRating} = useParams()
     const dummy="dummy"
     // console.log(resId)
     useEffect(()=>{
@@ -18,10 +18,10 @@ const Menu = (props)=>{
         const data = await fetch(MENU_URl+resId);
         const json = await data.json(); 
         setlistofres(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards)
-       setlistofres1(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards)
+        setlistofres1(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards)
      // optional chaninig
       }
-      // console.log(listofRes1)
+      console.log(listofRes1)
       const catogery = listofRes1.filter(
         (c)=>
         c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
@@ -29,9 +29,17 @@ const Menu = (props)=>{
       // console.log(catogery)
     // console.log(listofRes.cards[2].groupedCard.cardGroupMap.REGULAR.cards)
     return(
-        <div className="">
+        <div className="flex flex-col">
 
-        <h1 className="font-bold">Hello{resName}</h1>
+          <div>
+        <h1 className="font-bold flex items-center justify-center h-[200px]">
+          Hello
+        {resName} 
+        log
+         {resArea} 
+         {avgRating}
+        </h1>
+            </div> 
         
             {catogery.map((item,index)=>{
                 return( 

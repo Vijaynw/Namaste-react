@@ -16,7 +16,6 @@ const {resData} = props;
         src={CDN_URl+ resData.info.cloudinaryImageId}
         alt=""
       />
-    
       <h3 className="font-bold">{resData.info.name}</h3>
       <h4 >{resData.info.cuisines.join(",")}</h4>
       <h4>{resData.info.deliveryTime}</h4>

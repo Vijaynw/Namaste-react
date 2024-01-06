@@ -14,11 +14,16 @@ import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 import UserContext from "./components/UserContext";
 import Main from "./components/Main";
+import { User } from "./components/User";
+import { createContext } from "react";
 //import error
 const Contacts =lazy(()=>
   import("./components/Contacts")
 )
 
+export const Username = createContext({
+  name: "viay"
+})
 
 const AppLayout = () => {
 
@@ -36,7 +41,8 @@ const AppLayout = () => {
   return (
     <Provider store={appStore}>
 
-      <UserContext.Provider value={{loggedInuser:userName,setName}}>
+      <UserContext.Provider value={{loggedInuser:"userName",setName}}>
+    <Username.Provider value={"Vijay"}>
 
     <div className="app">
 
@@ -44,6 +50,7 @@ const AppLayout = () => {
       <Outlet/>
 
     </div>
+    </Username.Provider>
 
      </UserContext.Provider>
 
@@ -81,8 +88,19 @@ const appRouter = createBrowserRouter([
       element: <Cart/>
       },
       {
-        path: "/resturant/:resId/:resName",
+        path: "/resturant/:resId/:resName/:resArea/:avgRating",
         element: <Menu/>,
+        },
+      
+      {
+        path: "/user",
+        element: <User/>,
+        },
+       
+      
+      {
+        path: "/user",
+        element: <User/>,
         }
 
   ], 

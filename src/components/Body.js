@@ -8,20 +8,23 @@ import UserContext from "./UserContext";
 import { useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import Header from "./Header";
+import { LatLonContext } from "./LatLonContext";
 const Body = ({latlang}) => {
 
   const [listofRes,setlistofres] = useState([]);
   const [listofRes1,setlistofres1] = useState([]);
   const [search,setSearch]=useState("")
   const {userId} = useParams()
-  const location = useLocation();
+  // const location = useLocation();
   const lat = new URLSearchParams(location.search).get('lat');
   const lon = new URLSearchParams(location.search).get('lon');
   console.log(lat,lon)
-  console.log(location)
+  // console.log(location)
   const RestroPromoted = withPromothedData(Restrocard)
   //conditional
  
+  const LatLon = useContext(LatLonContext)
+  console.log(LatLon)
 
   const fetchData = async () => {
     
@@ -34,6 +37,7 @@ const Body = ({latlang}) => {
     // optional chaninig
   }
   const {setName,loggedInuser}= useContext(UserContext)
+  console.log(listofRes)
 
   useEffect(()=>{
     fetchData()
@@ -125,7 +129,7 @@ const Body = ({latlang}) => {
           <div className="flex flex-wrap justify-center">
 
             {listofRes.map((res) => (
-            <Link className=" break-words" key={res.info.id} to={"/resturant/"+ res.info.id +"/" + res.info.name} >
+            <Link className=" break-words" key={res.info.id} to={"/resturant/"+ res.info.id +"/" + res.info.name+"/"+res.info.areaName+"/"+res.info.avgRating} >
             {res.info.isOpen ?( <RestroPromoted  resData={res}/>):(
             <Restrocard resData={res}/>
            ) }

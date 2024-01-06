@@ -4,10 +4,11 @@ import UserContext from "./UserContext"
 
 const About =()=>{
     return(
-        <div className="about">
-        <h1>Hello About</h1>z
-        <User name="vijay from function component"/>
+        <div className="">
+        <h1 className="border flex justify-center mt-10 font-bold">Hello About</h1>
+        {/* <User name="vijay from function component"/> */}
         <UserClass name="vijay"/>
+        {/* <UserClass name="Alish"/> */}
         <UserContext.Consumer>
             {
              ({loggedInuser})=>(

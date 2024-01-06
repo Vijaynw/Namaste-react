@@ -25,9 +25,12 @@ const Main = () => {
               search: `?lat=${e.lat}&lon=${e.lon}`,
             }}
           >
-            <button className="m-5 p-2 border rounded-lg hover:bg-slate-300">
+            <select name="" id="">
+
+            <option className="m-5 p-2 border rounded-lg hover:bg-slate-300">
               {e.name}
-            </button>
+            </option>
+            </select>
           </Link>
         );
       })}
