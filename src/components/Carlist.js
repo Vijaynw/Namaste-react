@@ -10,7 +10,7 @@ const Catlist = ({ items, handler, id }) => {
   // const handleAd =()=>{
   //   dispatch(removeItem("pizza"))
   // }
-  console.log("handleAdd")
+  // console.log(handleAdd)
   console.log(items);
   return (
     <div>
