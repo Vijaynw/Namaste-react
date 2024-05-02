@@ -28,15 +28,17 @@ const Body = ({latlang}) => {
 
   const fetchData = async () => {
     
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lon+"&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lon+"&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
+    console.log(json)
     // setlistofres =json
-    setlistofres(json.data?.cards[2].card.card.gridElements.infoWithStyle.restaurants)
-    setlistofres1(json.data?.cards[2].card.card.gridElements.infoWithStyle.restaurants)
+    setlistofres(json.data?.cards[4]?.card.card.gridElements.infoWithStyle.restaurants)
+    setlistofres1(json.data?.cards[4]?.card.card.gridElements.infoWithStyle.restaurants)
     
     // optional chaninig
   }
-  const {setName,loggedInuser}= useContext(UserContext)
+  const {setName,loggedInuser}= useContext(UserContext``)
   console.log(listofRes)
 
   useEffect(()=>{
@@ -128,7 +130,7 @@ const Body = ({latlang}) => {
 
           <div className="flex flex-wrap justify-center">
 
-            {listofRes.map((res) => (
+            {listofRes.map((res) => (  
             <Link className=" break-words" key={res.info.id} to={"/resturant/"+ res.info.id +"/" + res.info.name+"/"+res.info.areaName+"/"+res.info.avgRating} >
             {res.info.isOpen ?( <RestroPromoted  resData={res}/>):(
             <Restrocard resData={res}/>
